@@ -10,9 +10,8 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   <script src="scripts/navigation.js"></script>
 </head>
-<body style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 300;">
-
-
+<body style="font-family: 'Montserrat', sans-serif; font-weight: 300;">
+	
 <section class="hero is-fullheight is-mobile has-background-dark">
 
   <nav aria-label="main navigation" class="navbar is-dark is-mobile is-marginless heading has-text-weight-bold"
@@ -34,25 +33,7 @@
 
     <div class="navbar-menu is-fullhd" id="navbarBasicExample">
       <div class="navbar-start">
-        <a class="navbar-item center" href="/">HOME</a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Projects</a>
-          <div class="navbar-dropdown is-hoverable has-background-black">
-            <a class="navbar-item center is-size-7 has-text-light" href="#projectnublar">PROJECT NUBLAR</a>
-            <a class="navbar-item center is-size-7 has-text-light" href="#dumblibrary">DUMB LIBRARY</a>
-            <a class="navbar-item center is-size-7 has-text-light" href="#gradlehook">GRADLEHOOK</a>
-          </div>
-        </div>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">More</a>
-          <div class="navbar-dropdown is-hoverable has-background-black">
-            <a class="navbar-item center is-size-7 has-text-light" href="displays/index.html">MODEL VIEWER</a>
-            <a class="navbar-item center is-size-7 has-text-light" href="team.html">ABOUT US</a>
-          </div>
-        </div>
-      </div>
+        <script src="../scripts/navdata.js"></script>
       </div>
     </div>
   </nav>
@@ -60,10 +41,7 @@
   <div class="hero-body center" id="home">
     <div class="container" style="text-align: center;">
       <div class="title has-text-light is-1 is-size-4-mobile">DUMB::CODE</div>
-      <div class="subtitle has-text-light is-5 is-size-6-mobile">Welcome to the DumbCode website!<br>weare a minecraft
-        modding group
-        that loves to bring<br>new experiences into the world of minecraft!
-      </div>
+      <div class="subtitle has-text-light is-5 is-size-6-mobile">Re-inventing the way you play Minecraft</div>
     </div>
   </div>
 
@@ -113,10 +91,20 @@
           <img class="image is-96x96" src="images/dclogo.svg" style="float:left; margin-right: 2rem;">
           <h1 class="title is-size-4">DumbCode</h1>
           Dedicated to bringing the greatest Minecraft mods to our community since 2018.
-          <form action="https://twitter.com/DumbCodeMC">
-            <br>
-            <input class="button is-fullwidth is-primary" type="submit" value="Twitter"/>
-          </form>
+		  <div class="columns is-fullwidth">
+		    <div class="column">
+			  <form action="https://twitter.com/DumbCodeMC">
+				<br>
+				<input class="button is-fullwidth is-primary" type="submit" value="Twitter"/>
+			  </form>
+			</div>
+			<div class="column">
+			  <form action="https://www.dumbcode.net/discord">
+				<br>
+				<input class="button is-fullwidth is-dark" type="submit" value="Discord"/>
+			  </form>
+			</div>
+		  </div>
         </div>
       </div>
       <div class="column">
@@ -132,6 +120,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
