@@ -1,7 +1,7 @@
 var currentSlide = 0;
-const maxSlides = 3;
+const maxSlides = 4;
 var timer = setInterval(updateCarousels, 10000);
-const element = document.getElementById("projectnublar")
+const element = document.getElementById("projectnublar");
 
 function startCarousel() {
   setBackground();
@@ -14,26 +14,26 @@ function updateCarousels() {
 }
 
 function setBackground() {
-    element.style.transition = "all .8s";
-    swapImage();
+  element.style.transition = "all .8s";
+  swapImage();
 }
 
 function setIndicators() {
   var bubbles = "";
   var currentBubble = "";
   for (var i = 0; i < maxSlides; i++) {
-    currentBubble = (i === currentSlide) ? "⬤" : "⭘";
+    currentBubble = i === currentSlide ? "⬤" : "⭘";
     bubbles = bubbles + currentBubble;
   }
   var bubbleTextElement = document.createElement("div");
-  bubbleTextElement.setAttribute('id', "bubbles");
+  bubbleTextElement.setAttribute("id", "bubbles");
   bubbleTextElement.appendChild(document.createTextNode(bubbles));
   element.appendChild(bubbleTextElement);
 }
 
 function swapImage() {
-    unsetImage();
-    setTimeout(setImage, 200);
+  unsetImage();
+  setTimeout(setImage, 200);
 }
 
 function updateIndicators() {
@@ -42,38 +42,46 @@ function updateIndicators() {
 }
 
 function unsetImage() {
-    element.classList.toggle("transparent");
+  element.classList.toggle("transparent");
 }
 
 function setImage() {
-    switch (currentSlide) {
-        case 0:
-        //The trex image isnt great for all devices so above this width we swap it with an edited version
-            if (document.documentElement.clientWidth > 960) {
-                element.style.background = "url('images/pn/trex.jpg')";
-            } else {
-                element.style.background = "url('images/pn/trexm.jpg')";
-            }
-            break;
-        case 1:
-        //The dilo image isnt great for all devices so above this width we swap it with an edited version
-            if (document.documentElement.clientWidth > 960) {
-                element.style.background = "url('images/pn/dilo.png')";
-            } else {
-                element.style.background = "url('images/pn/dilom.png')";
-            }
-            break;
-        case 2:
-            //The velociraptor image isnt great for all devices so above this width we swap it with an edited version
-            if (document.documentElement.clientWidth > 960) {
-                element.style.background = "url('images/pn/velo.jpg')";
-            } else {
-                element.style.background = "url('images/pn/velom.jpg')";
-            }
-            break;
-    }
-    element.style.backgroundSize = "cover";
-    element.classList.toggle("transparent");
-    currentSlide++;
-    currentSlide = (currentSlide === maxSlides) ? 0 : currentSlide;
+  switch (currentSlide) {
+    case 0:
+      //The trex image isnt great for all devices so above this width we swap it with an edited version
+      if (document.documentElement.clientWidth > 960) {
+        element.style.background = "url('images/pn/trex.jpg')";
+      } else {
+        element.style.background = "url('images/pn/trexm.jpg')";
+      }
+      break;
+    case 1:
+      //The dilo image isnt great for all devices so above this width we swap it with an edited version
+      if (document.documentElement.clientWidth > 960) {
+        element.style.background = "url('images/pn/dilo.png')";
+      } else {
+        element.style.background = "url('images/pn/dilom.png')";
+      }
+      break;
+    case 2:
+      //The velociraptor image isnt great for all devices so above this width we swap it with an edited version
+      if (document.documentElement.clientWidth > 960) {
+        element.style.background = "url('images/pn/velo.jpg')";
+      } else {
+        element.style.background = "url('images/pn/velom.jpg')";
+      }
+      break;
+    case 3:
+      //The velociraptor image isnt great for all devices so above this width we swap it with an edited version
+      if (document.documentElement.clientWidth > 960) {
+        element.style.background = "url('images/pn/comp.jpg')";
+      } else {
+        element.style.background = "url('images/pn/compm.jpg')";
+      }
+      break;
+  }
+  element.style.backgroundSize = "cover";
+  element.classList.toggle("transparent");
+  currentSlide++;
+  currentSlide = currentSlide === maxSlides ? 0 : currentSlide;
 }
