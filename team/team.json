@@ -60,6 +60,22 @@
         "website": "http://www.wynprice.com/"
       }
     },
+	{
+      "name": "Brotat",
+      "uuid": "d52fa7d2-0afc-4cc7-b405-666cdad8e8e7",
+      "roles": [
+        "modeler"
+      ],
+      "projects": [
+        "pn"
+      ],
+      "social": {
+        "discord": "Brotat#7369",
+        "twitter": "https://twitter.com/sunking64",
+        "github": "unset",
+        "website": "unset"
+      }
+    },
     {
       "name": "Brownboiiwonder",
       "uuid": "8803f3ac-1ed0-412a-ab44-844981af6e8b",
