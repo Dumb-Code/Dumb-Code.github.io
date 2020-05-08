@@ -84,6 +84,11 @@ class Cube {
         this.tbl = tbl
         this.textureMirrored = textureMirrored
 
+        let counter = 0
+        while(tbl.cubeMap.has(this.name)) {
+            this.name = name + "~" + counter
+            counter += 1
+        }
         tbl.cubeMap.set(this.name, this)
     }
 
