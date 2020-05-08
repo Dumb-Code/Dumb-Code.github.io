@@ -10,7 +10,7 @@ import { ByteBuffer } from "./animations.js"
 
 const major = 0
 const minor = 4
-const patch = 4
+const patch = 5
 
 const version = `${major}.${minor}.${patch}`
 document.getElementById("dumbcode-studio-version").innerText = `v${version}`
