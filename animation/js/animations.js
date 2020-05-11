@@ -1,6 +1,5 @@
 import { TBLModel } from './tbl_loader.js'
 import { readFile } from './displays.js';
-import { Vector3 } from './three.js';
 
 export class AnimationHandler {
     
@@ -27,10 +26,6 @@ export class AnimationHandler {
     }
 
     async onAnimationFileChange(files) {
-        if(this.tbl === undefined) {
-            alert("No model uploaded")
-            return
-        }
         let tblFiles = []
         let infoFile
 
@@ -78,10 +73,8 @@ export class AnimationHandler {
             keyframe.duration = baseTime
 
             pose.cubeMap.forEach(poseCube => {
-                let posArr = this.tbl.cubeMap.get(poseCube.name).rotationPoint
-                let rotArr = this.tbl.cubeMap.get(poseCube.name).rotation
-                keyframe.rotationPointMap.set(poseCube.name, poseCube.rotationPoint.map((item, index) => item - posArr[index]))
-                keyframe.rotationMap.set(poseCube.name, poseCube.rotation.map((item, index) => item - rotArr[index]))
+                keyframe.rotationPointMap.set(poseCube.name, poseCube.rotationPoint)
+                keyframe.rotationMap.set(poseCube.name, poseCube.rotation)
             })
 
             startTime += baseTime; //todo: time overrides ???
@@ -127,28 +120,9 @@ export class AnimationHandler {
                 kf.resortPointsDirty()
             }
 
-            this.repairKeyframe(kf, version)
-
             keyframes.push(kf)
         }
         return keyframes
-    }
-    
-
-    repairKeyframe(kf, version) {
-        if(version < 3) {
-            //transform from absolute to relative by subtracting the base tbl model
-            let map = this.tbl.cubeMap
-
-            kf.rotationMap.forEach((arr, key) => this.transformArr(arr, (item, index) => item - map.get(key).rotation[index]))
-            kf.rotationPointMap.forEach((arr, key) => this.transformArr(arr, (item, index) => item - map.get(key).rotationPoint[index]))
-        }
-    }
-
-    transformArr(arr, func) {
-        for(let i = 0; i < arr.length; i++) {
-            arr[i] = func(arr[i], i)
-        }
     }
 
     animate(deltaTime) {
@@ -248,9 +222,8 @@ class KeyFrame {
         this.fromRotationMap.clear()
         this.fromRotationPointMap.clear()
         for(let [cubename, entry] of this.handler.animationMap.entries()) {
-            let cube = this.handler.tbl.cubeMap.get(cubename)
-            this.fromRotationMap.set(cubename, [entry.rotation.x, entry.rotation.y, entry.rotation.z].map(r => r * 180/Math.PI).map((e, i) => e - cube.rotation[i]))
-            this.fromRotationPointMap.set(cubename, entry.position.toArray().map((e, i) => e - cube.rotationPoint[i]))
+            this.fromRotationMap.set(cubename, [entry.rotation.x, entry.rotation.y, entry.rotation.z].map(r => r * 180/Math.PI))
+            this.fromRotationPointMap.set(cubename, entry.position.toArray())
         }
     }
 
@@ -292,26 +265,22 @@ class KeyFrame {
 
         for(let key of this.handler.animationMap.keys()) {
             let cube = this.handler.animationMap.get(key);
-            let tabulaCube = this.handler.tbl.cubeMap.get(key)
 
-            let baseRot = tabulaCube.rotation
             let irot
             if(this.rotationMap.has(key)) {
                 irot = this.interpolate(this.fromRotationMap.get(key), this.rotationMap.get(key))
             } else {
                 irot = this.fromRotationMap.get(key)
             }
-            cube.rotation.set((baseRot[0] + irot[0]) * Math.PI / 180, (baseRot[1] + irot[1]) * Math.PI / 180, (baseRot[2] + irot[2]) * Math.PI / 180)
+            cube.rotation.set(irot[0] * Math.PI / 180, irot[1] * Math.PI / 180, irot[2] * Math.PI / 180)
 
-
-            let basePos = tabulaCube.rotationPoint
             let ipos
             if(this.rotationPointMap.has(key)) {
                 ipos = this.interpolate(this.fromRotationPointMap.get(key), this.rotationPointMap.get(key))
             } else {
                 ipos = this.fromRotationPointMap.get(key)
             }
-            cube.position.set(basePos[0] + ipos[0], basePos[1] + ipos[1], basePos[2] + ipos[2])
+            cube.position.set(ipos[0], ipos[1], ipos[2])
         }
     }
 

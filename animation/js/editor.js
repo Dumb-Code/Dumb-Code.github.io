@@ -10,7 +10,7 @@ import { ByteBuffer } from "./animations.js"
 
 const major = 0
 const minor = 4
-const patch = 6
+const patch = 5
 
 const version = `${major}.${minor}.${patch}`
 document.getElementById("dumbcode-studio-version").innerText = `v${version}`
@@ -449,7 +449,7 @@ window.downloadDCA = () => {
     if(display.animationHandler) {
         let buffer = new ByteBuffer()
 
-        buffer.writeNumber(3) //version
+        buffer.writeNumber(2) //version
         buffer.writeNumber(display.animationHandler.sortedTimes.length)
 
         display.animationHandler.sortedTimes.forEach(kf => {
