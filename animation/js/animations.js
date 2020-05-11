@@ -120,9 +120,28 @@ export class AnimationHandler {
                 kf.resortPointsDirty()
             }
 
+            this.repairKeyframe(kf, version)
+
             keyframes.push(kf)
         }
         return keyframes
+    }
+
+
+    repairKeyframe(kf, version) {
+        if(version >= 3) {
+            //transform from relative to absolute by adding the base tbl model
+            let map = this.tbl.cubeMap
+
+            kf.rotationMap.forEach((arr, key) => this.transformArr(arr, (item, index) => item + map.get(key).rotation[index]))
+            kf.rotationPointMap.forEach((arr, key) => this.transformArr(arr, (item, index) => item + map.get(key).rotationPoint[index]))
+        }
+    }
+
+    transformArr(arr, func) {
+        for(let i = 0; i < arr.length; i++) {
+            arr[i] = func(arr[i], i)
+        }
     }
 
     animate(deltaTime) {

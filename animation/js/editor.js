@@ -10,7 +10,7 @@ import { ByteBuffer } from "./animations.js"
 
 const major = 0
 const minor = 4
-const patch = 5
+const patch = 7
 
 const version = `${major}.${minor}.${patch}`
 document.getElementById("dumbcode-studio-version").innerText = `v${version}`
@@ -449,15 +449,15 @@ window.downloadDCA = () => {
     if(display.animationHandler) {
         let buffer = new ByteBuffer()
 
-        buffer.writeNumber(2) //version
+        buffer.writeNumber(3) //version
         buffer.writeNumber(display.animationHandler.sortedTimes.length)
 
         display.animationHandler.sortedTimes.forEach(kf => {
             buffer.writeNumber(kf.startTime)
             buffer.writeNumber(kf.duration)
             
-            writeMap(buffer, kf.fromRotationMap, kf.rotationMap)
-            writeMap(buffer, kf.fromRotationPointMap, kf.rotationPointMap)
+            writeMap(buffer, kf.fromRotationMap, kf.rotationMap, c => c.rotation)
+            writeMap(buffer, kf.fromRotationPointMap, kf.rotationPointMap, c => c.rotationPoint)
         
 
             buffer.writeNumber(kf.progressionPoints.length)
@@ -479,7 +479,7 @@ window.downloadDCA = () => {
     }
 }
 
-function writeMap(buffer, fromMap, map) {
+function writeMap(buffer, fromMap, map, cubeFunc) {
     let arr = []
     map.forEach((entry, cubename) => {
         if(!array3FuzzyEqual(entry, fromMap.get(cubename))) {
@@ -488,10 +488,11 @@ function writeMap(buffer, fromMap, map) {
     })
     buffer.writeNumber(arr.length)
     arr.forEach(entry => {
+        let arr = cubeFunc(display.tbl.cubeMap.get(entry.cubename))
         buffer.writeString(entry.cubename)
-        buffer.writeNumber(entry.entry[0])
-        buffer.writeNumber(entry.entry[1])
-        buffer.writeNumber(entry.entry[2])
+        buffer.writeNumber(entry.entry[0] - arr[0])
+        buffer.writeNumber(entry.entry[1] - arr[1])
+        buffer.writeNumber(entry.entry[2] - arr[2])
     })
 }
 
