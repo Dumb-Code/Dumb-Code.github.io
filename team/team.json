@@ -64,7 +64,7 @@
       "name": "Brotat",
       "uuid": "d52fa7d2-0afc-4cc7-b405-666cdad8e8e7",
       "roles": [
-        "modeler"
+        "textureartist"
       ],
       "projects": [
         "pn"
@@ -131,6 +131,38 @@
       }
     },
     {
+      "name": "Hoodini",
+      "uuid": "cee1923e-dbcd-4e22-b904-04a5946f995c",
+      "roles": [
+        "modler"
+      ],
+      "projects": [
+        "pn"
+      ],
+      "social": {
+        "discord": "MLGMagicHoodini#2322 ",
+        "twitter": "https://twitter.com/Planetx5050",
+        "github": "https://github.com/MLGMagicHoodini",
+        "website": "unset"
+      }
+    },
+    {
+      "name": "LordofLustria ",
+      "uuid": "de479043-1424-4ea0-999b-e7fe250366dd",
+      "roles": [
+        "textureartist"
+      ],
+      "projects": [
+        "pn"
+      ],
+      "social": {
+        "discord": "LordofLustria#5475 ",
+        "twitter": "https://twitter.com/LordofLustria",
+        "github": "unset",
+        "website": "unset"
+      }
+    },
+    {
       "name": "NeusFear",
       "uuid": "d95a0f06-0e0b-4208-8542-e694726048e2",
       "roles": [
@@ -146,14 +178,15 @@
         "discord": "NeusFear#5173",
         "twitter": "https://twitter.com/Bran_D0ne",
         "github": "https://github.com/NeusFear/",
-        "website": "https://pleodia.com/"
+        "website": "https://brandonmdavis.com/"
       }
     },
     {
       "name": "Mazikeen",
       "uuid": "bdbfb7e6-103b-4534-b0b3-be224b48fb86",
       "roles": [
-        "builder"
+        "builder",
+		"textureartist"
       ],
       "projects": [
         "pn"
@@ -195,7 +228,7 @@
         "pn"
       ],
       "social": {
-        "discord": "Hyper-Ionic#5603",
+        "discord": "Hyper#5603",
         "twitter": "https://twitter.com/Alpha_Hyperion",
         "github": "unset",
         "website": "unset"
@@ -317,39 +350,6 @@
       ],
       "social": {
         "discord": "Igrek#5723",
-        "twitter": "unset",
-        "github": "unset",
-        "website": "unset"
-      }
-    },
-    {
-      "name": "Bob Mowzie",
-      "uuid": "8667ba71-b85a-4004-af54-457a9734eed7",
-      "roles": [
-        "programmer"
-      ],
-      "projects": [
-        "dl"
-      ],
-      "social": {
-        "discord": "Bob Mowzie#2676",
-        "twitter": "unset",
-        "github": "unset",
-        "website": "unset"
-      }
-    },
-    {
-      "name": "MVCinnyq",
-      "uuid": "8667ba71-b85a-4004-af54-457a9734eed7",
-      "roles": [
-        "modeler",
-        "textureartist"
-      ],
-      "projects": [
-        "todm"
-      ],
-      "social": {
-        "discord": "MCVinnyq#7463",
         "twitter": "unset",
         "github": "unset",
         "website": "unset"
