@@ -79,7 +79,7 @@ function setImage() {
         element.style.background = "url('images/pn/compm.png')";
       }
       break;
-	case 3:
+    case 4:
       //The trike image isnt great for all devices so above this width we swap it with an edited version
       if (document.documentElement.clientWidth > 960) {
         element.style.background = "url('images/pn/trike.jpg')";
