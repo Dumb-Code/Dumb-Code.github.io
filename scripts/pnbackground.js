@@ -1,5 +1,5 @@
 var currentSlide = 0;
-const maxSlides = 4;
+const maxSlides = 5;
 var timer = setInterval(updateCarousels, 10000);
 const element = document.getElementById("projectnublar");
 
@@ -72,11 +72,19 @@ function setImage() {
       }
       break;
     case 3:
-      //The velociraptor image isnt great for all devices so above this width we swap it with an edited version
+      //The comp image isnt great for all devices so above this width we swap it with an edited version
       if (document.documentElement.clientWidth > 960) {
         element.style.background = "url('images/pn/comp.png')";
       } else {
         element.style.background = "url('images/pn/compm.png')";
+      }
+      break;
+	case 3:
+      //The trike image isnt great for all devices so above this width we swap it with an edited version
+      if (document.documentElement.clientWidth > 960) {
+        element.style.background = "url('images/pn/trike.jpg')";
+      } else {
+        element.style.background = "url('images/pn/trikem.jpg')";
       }
       break;
   }
