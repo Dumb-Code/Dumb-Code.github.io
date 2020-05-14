@@ -58,9 +58,9 @@ function setImage() {
     case 1:
       //The dilo image isnt great for all devices so above this width we swap it with an edited version
       if (document.documentElement.clientWidth > 960) {
-        element.style.background = "url('images/pn/dilo.png')";
+        element.style.background = "url('images/pn/dilo.jpg')";
       } else {
-        element.style.background = "url('images/pn/dilom.png')";
+        element.style.background = "url('images/pn/dilom.jpg')";
       }
       break;
     case 2:
