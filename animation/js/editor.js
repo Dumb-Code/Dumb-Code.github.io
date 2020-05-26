@@ -10,7 +10,7 @@ import { ByteBuffer } from "./animations.js"
 
 const major = 0
 const minor = 4
-const patch = 7
+const patch = 8
 
 const version = `${major}.${minor}.${patch}`
 document.getElementById("dumbcode-studio-version").innerText = `v${version}`
@@ -785,7 +785,7 @@ window.setupTexture = async(file, nameElement) => {
 
         tex.flipY = false
         tex.magFilter = NearestFilter;
-        tex.minFilter = LinearMipMapLinearFilter;
+        tex.minFilter = NearestFilter;
 
         material.map = tex
         selectedMaterial.map = tex
