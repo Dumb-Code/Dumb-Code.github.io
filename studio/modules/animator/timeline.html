@@ -1,0 +1,158 @@
+<style>
+.layer {
+    height: 22px;
+    padding-left: 10px;
+    padding-right: 100px;
+}
+.layer-name {
+    padding: 1px; 
+    margin:0px; 
+    margin-bottom: 3px;
+}
+
+.keyframe-container {
+   background: repeating-linear-gradient( 
+       90deg,
+       #363636  0px,
+       #363636  20px,
+       #4A4A4A  20px,
+       #4A4A4A  40px);
+   background-size: 40px;
+   margin-bottom: 3px;
+   height: 20px;
+   padding: 0px;
+   display: flex;
+}
+
+.keyframe {
+    height: 12px;
+    border-radius: 6px;
+    z-index: 1;
+    position: relative;
+    top: 4px;
+    display: inline-flex;
+}
+.keypoint {
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    z-index: 2;
+    position: relative;
+    top: -3px;
+}
+
+.key-blue {
+    background-color:#5096f2;
+}
+.key-green {
+    background-color:#78e673;
+}
+.key-yellow {
+    background-color:#fae37d;
+}
+.key-red {
+    background-color:#ed7261;
+}
+
+.key-point-blue {
+    background-color:#0081e3;
+}
+.key-point-green {
+    background-color:#34de2c;
+}
+.key-point-yellow {
+    background-color:#ffcc24;
+}
+.key-point-red {
+    background-color:#cc422f;
+}
+
+</style>
+
+<div class="columns is-mobile layer">
+    <div class="column is-narrow">
+        <div class="notification has-background-black-ter layer-name">
+            <p class="heading is-size-8" style="margin-bottom: 3px;">Layer 1</p>
+        </div>
+    </div>
+
+    <div class="column is-narrow has-text-grey">
+        <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+        </span>
+    </div>
+
+    <div class="column">
+        <div class="notification is-fullwidth has-background-dark keyframe-container">
+            <div class="keyframe key-blue" style="left: 100px; width: 80px;"><div class="keypoint key-point-blue"></div></div>
+            <div class="keyframe key-blue" style="left: 180px; width: 80px;"><div class="keypoint key-point-blue"></div></div>
+            <div class="keyframe key-blue" style="left: 300px; width: 100px;"><div class="keypoint key-point-blue"></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="columns is-mobile layer">
+    <div class="column is-narrow">
+        <div class="notification has-background-black-ter layer-name">
+            <p class="heading is-size-8" style="margin-bottom: 3px;">Layer 2</p>
+        </div>
+    </div>
+
+    <div class="column is-narrow has-text-grey">
+        <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+        </span>
+    </div>
+
+    <div class="column">
+        <div class="notification is-fullwidth has-background-dark keyframe-container">
+            <div class="keyframe key-green" style="left: 0px; width: 80px;"><div class="keypoint key-point-green"></div></div>
+            <div class="keyframe key-green" style="left: 280px; width: 60px;"><div class="keypoint key-point-green"></div></div>
+            <div class="keyframe key-green" style="left: 320px; width: 160px;"><div class="keypoint key-point-green"></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="columns is-mobile layer">
+    <div class="column is-narrow">
+        <div class="notification has-background-black-ter layer-name">
+            <p class="heading is-size-8" style="margin-bottom: 3px;">Layer 3</p>
+        </div>
+    </div>
+
+    <div class="column is-narrow has-text-grey">
+        <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+        </span>
+    </div>
+
+    <div class="column">
+        <div class="notification is-fullwidth has-background-dark keyframe-container">
+            <div class="keyframe key-yellow" style="left: 60px; width: 100px;"><div class="keypoint key-point-yellow"></div></div>
+            <div class="keyframe key-yellow" style="left: 180px; width: 80px;"><div class="keypoint key-point-yellow"></div></div>
+            <div class="keyframe key-yellow" style="left: 260px; width: 120px;"><div class="keypoint key-point-yellow"></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="columns is-mobile layer">
+    <div class="column is-narrow">
+        <div class="notification has-background-black-ter layer-name">
+            <p class="heading is-size-8" style="margin-bottom: 3px;">Layer 4</p>
+        </div>
+    </div>
+
+    <div class="column is-narrow has-text-grey">
+        <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+        </span>
+    </div>
+
+    <div class="column">
+        <div class="notification is-fullwidth has-background-dark keyframe-container">
+            <div class="keyframe key-red" style="left: 100px; width: 60px;"><div class="keypoint key-point-red"></div></div>
+            <div class="keyframe key-red" style="left: 180px; width: 60px;"><div class="keypoint key-point-red"></div></div>
+            <div class="keyframe key-red" style="left: 300px; width: 100px;"><div class="keypoint key-point-red"></div></div>
+        </div>
+    </div>
+</div>
