@@ -34,8 +34,11 @@
     color: rgba(225, 231, 229, 0.568);
     font-size: 48px;
     position: absolute;
-    background: transparent;
-    border: none !important;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
     transition-duration: 0.5s;
 }
 .carousel-navigators:hover {
