@@ -49,3 +49,10 @@
 .is-right {
     right: 20px;
 }
+
+@media screen and (max-width: 600px) {
+    .carousel-navigators {
+      font-size: 24px;
+      margin-top: 20vh;
+    }
+  }
