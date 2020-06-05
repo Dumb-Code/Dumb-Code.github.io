@@ -7,7 +7,7 @@ function initTeams() {
       fillRoles(jsonMembers);
     }
   };
-  xmlhttp.open("GET", "team/team.json", true);
+  xmlhttp.open("GET", "assets/team/team.json", true);
   xmlhttp.send();
 }
 
