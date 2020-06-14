@@ -14,6 +14,7 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ${{ secrets.FTP_IP }}
+        ftp-server: sftp://51.222.31.214
         ftp-username: ubuntu
         ftp-password: ${{ secrets.FTP_PASSWORD }}
+        known-hosts: ${{ secrets.FTP_KNOWN_HOSTS }} 
