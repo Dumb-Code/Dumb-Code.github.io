@@ -27,6 +27,10 @@
     {
       "id": "builder", "title": "Builders", "img": "pn/trexm.jpg",
       "content": "Builders have a special job in our team too. They have 2 main jobs. Create structures that generate in game for the players to experience, and to make sets for our mod showcases! Follow our twitter? then you've probably seen the sets that our builders have made already."
+    },
+    {
+      "id": "thanks", "title": "Special Thanks",
+      "content": "These people have contributed to the team's progress, but have moved on to other things. We want to give them some recognition anyways. Thanks guys!"
     }
   ],
   "social": {
@@ -98,8 +102,7 @@
       "name": "Jack Goldsworth",
       "uuid": "54201149-1f1f-498b-98ca-50f66951a68f",
       "roles": [
-        "programmer",
-        "webdeveloper"
+        "thanks"
       ],
       "projects": [
         "todm",
