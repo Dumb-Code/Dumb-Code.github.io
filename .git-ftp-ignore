@@ -1,4 +1,9 @@
 .gitignore
+.git-ftp-ignore
+.git-ftp-include
+README.md
 .git/*
 .github/*
-images/posts/*
+bulma/*
+*.sass
+*.scss
