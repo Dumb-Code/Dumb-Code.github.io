@@ -7,3 +7,8 @@
 .main-gallery {
     height: 100%;
 }
+
+.main-gallery:after {
+    content: 'flickity';
+    display: none;
+  }

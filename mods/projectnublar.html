@@ -23,7 +23,7 @@
 
             <div class="column is-three-quarters">
                 <div class="hero is-medium">
-                    <div class="main-gallery">
+                    <div class="main-gallery js-flickity" data-flickity-options='{ "cellAlign": "left", "wrapAround": true, "autoPlay": true }'>
                         <div class="gallery-cell"><img style="min-height: 100%" src="../images/project_nublar/comp.jpg" alt="" /></div>
                         <div class="gallery-cell"><img style="min-height: 100%" src="../images/project_nublar/dilo.jpg" alt="" /></div>
                         <div class="gallery-cell"><img style="min-height: 100%" src="../images/project_nublar/trike.jpg" alt="" /></div>
@@ -90,13 +90,5 @@
 
     <!--Initiate the carousel-->
     <script src="https://unpkg.com/flickity@2.2.1/dist/flickity.pkgd.min.js"></script>
-    <script>
-        var flkty = new Flickity( '.main-gallery', {
-        // options
-        cellAlign: 'left',
-        wrapAround: true,
-        autoPlay: true
-        });
-    </script>
 </body>
 </html>
