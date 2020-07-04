@@ -2,4 +2,8 @@
     width: 100%; /* full width */
     height: 100%; /* height of carousel */
     margin-right: 10px;
-  }  
+}
+
+.main-gallery {
+    height: 100%;
+}
