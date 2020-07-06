@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>DumbCode</title>
   <link rel="stylesheet" href="../css/bulma.css" />
+  <link rel="stylesheet" href="../css/carousel.css" />
   <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
   <script src="../scripts/modules.js"></script>
 </head>
@@ -21,7 +22,15 @@
 
             <div class="column is-three-quarters">
                 <div class="hero is-medium">
-                    <div class="notification" style="height: 100%; width: 100%;">Placeholder carousel</div>
+                    <div class="notification" style="height: 100%; width: 100%;">
+                        <div class="carousel" id="carousel">
+                            <picture class="carousel-item"><source media="(max-width: 900px)" srcset="./images/pn/trexm.jpg"><img class="image" src="./images/pn/trex.jpg"></picture>
+                            <picture class="carousel-item"><source media="(max-width: 900px)" srcset="./images/pn/velom.jpg"><img class="image" src="./images/pn/velo.jpg"></picture>
+                            <picture class="carousel-item"><source media="(max-width: 900px)" srcset="./images/pn/dilom.jpg"><img class="image" src="./images/pn/dilo.jpg"></picture>
+                            <picture class="carousel-item"><source media="(max-width: 900px)" srcset="./images/pn/compm.png"><img class="image" src="./images/pn/comp.png"></picture>
+                            <picture class="carousel-item"><source media="(max-width: 900px)" srcset="./images/pn/trikem.jpg"><img class="image" src="./images/pn/trike.jpg"></picture>
+                          </div>
+                    </div>
                 </div>
             </div>
 
@@ -80,5 +89,6 @@
     <section class="is-mobile">
         <div module="../modules/footer.html"></div>
     </section>
+    <script src="./scripts/carousel.js"></script>
 </body>
 </html>
