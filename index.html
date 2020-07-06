@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>DumbCode</title>
   <link rel="stylesheet" href="css/bulma.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
   <script src="scripts/modules.js"></script>
 </head>
 <body>
@@ -14,21 +13,7 @@
         <div module="modules/navbar.html"></div>
     </section>
 
-    <section class="hero is-fullheight-with-navbar has-carousel">
-        <div id="pn-test-carousel" class="hero-carousel is-dark" style="height: 100%">
-            <div class="has-background is-active" style="height: 100%">
-                <img class="is-background" style="min-height: 100%" src="./images/project_nublar/comp.jpg" alt="" />
-            </div>
-            <div class="has-background" style="height: 100%">
-                <img class="is-background" style="min-height: 100%" src="./images/project_nublar/dilo.jpg" alt="" />
-            </div>
-            <div class="has-background" style="height: 100%">
-                <img class="is-background" style="min-height: 100%" src="./images/project_nublar/trike.jpg" alt="" />
-            </div>
-            <div class="has-background" style="height: 100%">
-                <img class="is-background" style="min-height: 100%" src="./images/project_nublar/velo.jpg" alt="" />
-            </div>
-        </div>
+    <section class="hero is-fullheight-with-navbar">
         <div class="hero-head">
             Top Text
         </div>
@@ -47,18 +32,5 @@
     <section class="is-mobile">
         <div module="./modules/footer.html"></div>
     </section>
-
-    <!--Initiate the carousel-->
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js" data-type="text/javascript" data-level="functionality"></script>
-    <script>
-        bulmaCarousel.attach('#pn-test-carousel', {
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            loop: true,
-            infinite: true,
-            autoplay: true,
-            
-        });
-    </script>
 </body>
 </html>

@@ -1,19 +1,8 @@
 .carousel {
     min-width: 100%;
-    position: absolute;
     padding: 0px;
-    white-space: nowrap;
-    margin-left: -1vw;
+    margin: 0px;
     overflow: hidden;
-    display: table;
-    clear: both;
-    content: "";
-}
-
-.carousel-image {
-    position: relative !important;
-    float: left;
-    width: 100%;
 }
 
 .carousel-indicators {
@@ -23,16 +12,12 @@
 }
 
 .carousel-navigators {
-    color: rgba(225, 231, 229, 0.568);
-    font-size: 48px;
-    position: absolute;
+    font-size: 28px;
+    position: relative;
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     outline:none;
     transition-duration: 0.5s;
-}
-.carousel-navigators:hover {
-    color: white;
 }

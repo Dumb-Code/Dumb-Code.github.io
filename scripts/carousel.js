@@ -5,8 +5,8 @@ var last = element.lastElementChild.cloneNode(true);
 //Add a copy of the first and last elements to the end and front to make it look like an infinite loop both directions.
 element.insertBefore(last, element.firstChild);
 element.appendChild(first);
-//Offset to after fake first slide
-element.style.transform = "translateX(-100%)";
+//Make the whole thing the correct width
+element.style.width = element.childElementCount * 100 + "%";
 
 var maxSlideIndex = element.childElementCount - 2;
 var time = 0;
@@ -20,6 +20,7 @@ var reverse = false;
 document.getElementById("left").onclick = pageBack;
 document.getElementById("right").onclick = pageForward;
 
+move();
 updateIndicators();
 
 function tick() {
@@ -27,7 +28,7 @@ function tick() {
     time = 0;
     if (currentSlide == maxSlideIndex && !reverse) {
       currentSlide = 1;
-      element.style.transform = "translateX(-100%)";
+      element.style.transform = "translateX(-" + 100/element.childElementCount + ")";
     } else if (currentSlide == 1 && reverse) {
       currentSlide = maxSlideIndex;
     } else {
@@ -48,16 +49,20 @@ function move() {
   } else {
     offset = (currentSlide * 100) + Math.sin(Math.PI * ((time / slideDuration) - 0.5)) * 50 + 50;
   }
-  element.style.transform = "translateX(-" + Math.round(offset) + "%)";
+  element.style.transform = "translateX(-" + offset/element.childElementCount + "%)";
 }
 
 function pageForward() {
-  time = slideStay;
+  if (time < slideStay) {
+    time = slideStay;
+  }
 }
 
 function pageBack() {
   reverse = true;
-  time = slideStay;
+  if (time < slideStay) {
+    time = slideStay;
+  }
 }
 
 function updateIndicators() {
