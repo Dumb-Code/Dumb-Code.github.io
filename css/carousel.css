@@ -5,9 +5,6 @@
     white-space: nowrap;
     margin-left: -1vw;
     overflow: hidden;
-}
-
-.carousel::after {
     display: table;
     clear: both;
     content: "";
