@@ -6,7 +6,7 @@ var last = element.lastElementChild.cloneNode(true);
 element.insertBefore(last, element.firstChild);
 element.appendChild(first);
 //Offset to after fake first slide
-element.style.transform = "translateX(-100vw)";
+element.style.transform = "translateX(-100%)";
 
 var maxSlideIndex = element.childElementCount - 2;
 var time = 0;
@@ -27,7 +27,7 @@ function tick() {
     time = 0;
     if (currentSlide == maxSlideIndex && !reverse) {
       currentSlide = 1;
-      element.style.transform = "translateX(-100vw)";
+      element.style.transform = "translateX(-100%)";
     } else if (currentSlide == 1 && reverse) {
       currentSlide = maxSlideIndex;
     } else {
@@ -48,7 +48,7 @@ function move() {
   } else {
     offset = (currentSlide * 100) + Math.sin(Math.PI * ((time / slideDuration) - 0.5)) * 50 + 50;
   }
-  element.style.transform = "translateX(-" + Math.round(offset) + "vw)";
+  element.style.transform = "translateX(-" + Math.round(offset) + "%)";
 }
 
 function pageForward() {

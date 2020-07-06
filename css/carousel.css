@@ -5,10 +5,12 @@
     white-space: nowrap;
     margin-left: -1vw;
     overflow: hidden;
+    display: inline-block;
 }
 
 .carousel-image {
-    display: inline-block;
+    padding: 0px;
+    margin: 0px;
 }
 
 .carousel-indicators {
@@ -30,12 +32,4 @@
 }
 .carousel-navigators:hover {
     color: white;
-}
-
-.is-left {
-    left: 20px;
-}
-
-.is-right {
-    right: 20px;
 }
