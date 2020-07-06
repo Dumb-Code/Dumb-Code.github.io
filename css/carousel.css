@@ -5,12 +5,17 @@
     white-space: nowrap;
     margin-left: -1vw;
     overflow: hidden;
-    display: inline-block;
+}
+
+.carousel::after {
+    display: table;
+    clear: both;
+    content: "";
 }
 
 .carousel-image {
-    padding: 0px;
-    margin: 0px;
+    float: left;
+    width: 100%;
 }
 
 .carousel-indicators {
