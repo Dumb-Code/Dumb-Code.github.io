@@ -25,7 +25,7 @@ var bubbles = document.getElementsByClassName("carousel-indicators")[0];
 var bubbleElement = document.createElement("div");
 bubbleElement.classList.toggle("bubble");
 for (let bubble = 0; bubble < maxSlideIndex; bubble++) {
-  bubbles.appendChild(document.appendChild(bubbleElement.cloneNode(true)));
+  bubbles.appendChild(bubbleElement.cloneNode(true));
 }
 //For some reason it's offset by one so move it
 move();
