@@ -8,6 +8,11 @@ element.appendChild(first);
 //Make the whole thing the correct width
 element.style.width = element.childElementCount * 100 + "%";
 
+const solid = document.createElement("div");
+solid.classList.add("bubble-solid");
+const empty = document.createElement("div");
+solid.classList.add("bubble-empty");
+
 var maxSlideIndex = element.childElementCount - 2;
 var time = 0;
 var currentSlide = 1;
@@ -66,12 +71,9 @@ function pageBack() {
 }
 
 function updateIndicators() {
+  bubbleElement.innerHTML = "";
   const bubbleElement = document.getElementsByClassName("carousel-indicators")[0];
-  const solid = document.createElement("div");
-  solid.classList.add("bubble-solid");
-  const empty = document.createElement("div");
-  solid.classList.add("bubble-empty");
   for (var i = 1; i < maxSlideIndex + 1; i++) {
-    i === currentSlide ? bubbleElement.appendChild(solid) : bubbleElement.appendChild(empty);
+    i === currentSlide ? bubbleElement.appendChild(solid.cloneNode(true)) : bubbleElement.appendChild(empty.cloneNode(true));
   }
 }
