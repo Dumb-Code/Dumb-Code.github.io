@@ -72,8 +72,14 @@ function pageBack() {
 
 function updateIndicators() {
   bubbleElement.innerHTML = "";
-  const bubbleElement = document.getElementsByClassName("carousel-indicators")[0];
+  var bubbleElement = document.createElement("div");
+  bubbleElement.classList.toggle("carousel-indicators");
   for (var i = 1; i < maxSlideIndex + 1; i++) {
-    i === currentSlide ? bubbleElement.appendChild(solid.cloneNode(true)) : bubbleElement.appendChild(empty.cloneNode(true));
+    if (i === currentSlide) {
+      bubbleElement.appendChild(solid.cloneNode(true));
+    } else {
+      bubbleElement.appendChild(empty.cloneNode(true));
+    }
   }
+  document.getElementsByClassName("carousel-indicators")[0] = bubbleElement;
 }
