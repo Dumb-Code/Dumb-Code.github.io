@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>DumbCode</title>
-  <link rel="stylesheet" href="css/bulma.css" />
+  <link rel="stylesheet" href="./css/bulma.css" />
+  <link rel="stylesheet" href="./css/carousel.css" />
   <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
   <script src="scripts/modules.js"></script>
 </head>
@@ -13,24 +14,68 @@
         <div module="modules/navbar.html"></div>
     </section>
 
-    <section class="hero is-fullheight-with-navbar">
-        <div class="hero-head">
-            Top Text
-        </div>
+    <section class="hero is-fullheight-with-navbar is-dark has-background-black-ter">
         <div class="hero-body">
             <div class="container">
-                <h1 class="is-title">
-                    Hello World!
+                <h1 class="title is-1">
+                    Dumb Code
+                </h1>
+                <h1 class="subtitle is-3">
+                    Re-inventing the way you play Minecraft.
                 </h1>
             </div>
         </div>
-        <div class="hero-foot">
-            Bottom Text
+    </section>
+
+    <section class="hero is-dark py-0 px-0" style="overflow: hidden;">
+        
+        <div class="hero-body is-marginless is-paddingless">
+            <div class="carousel columns is-gapless is-mobile" id="carousel" style="height: 400px;">
+                <div class="column">
+                    <div style="background-image: url('./images/project_nublar/comp.jpg'); height: 100%; background-size: cover; background-position: center; text-align: center; padding-top: 150px;">
+                        <a href="/mods/projectnublar"><h1 class="title is-1"><strong>Project Nublar</strong></h1></a>
+                        <h4 class="subtitle is-4">Dinosaurs</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="background-image: url('./images/dumb_library.bmp'); height: 100%; background-size: cover; text-align: center; padding-top: 150px;">
+                        <a href="/mods/dumblibrary"><h1 class="title is-1"><strong>DunbLibrary</strong></h1></a>
+                        <h4 class="subtitle is-4">A lib</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="background-image: url('./images/gradle_hook.bmp'); height: 100%; background-size: cover; background-position: bottom; text-align: center; padding-top: 150px;">
+                        <a href="/mods/gradlehook"><h1 class="title is-1"><strong>Gradle Hook</strong></h1></a>
+                        <h4 class="subtitle is-4">hooks gradle</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="columns is-mobile is-gapless" style="height: 0px;">
+                <div class="column">
+                    <button class="carousel-navigators has-text-light" style="left: 20px; position: relative; top: -230px;" id="left">
+                        <span class="icon is-small">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="column">
+                    <div class="carousel-indicators" style="margin-top: -50px;"></div>
+                </div>
+                <div class="column" style="text-align: right;">
+                    <button class="carousel-navigators has-text-light" style="right: 20px; position: relative; top: -230px;" id="right">
+                        <span class="icon is-small">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="is-mobile">
         <div module="./modules/footer.html"></div>
     </section>
+    <script src="../scripts/carousel.js"></script>
 </body>
 </html>
