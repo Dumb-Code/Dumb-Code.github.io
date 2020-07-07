@@ -74,8 +74,8 @@ function pageBack() {
 
 function updateIndicators() {
   var bubbleElement = document.getElementsByClassName("carousel-indicators")[0]
-  for (let i = 0; i < maxSlideIndex; i++) {
+  for (let i = 0; i < maxSlideIndex - 1; i++) {
     bubbleElement.children[i].classList.remove("bubble-active");
   }
-  bubbleElement.children[currentSlide].classList.add("bubble-active");
+  bubbleElement.children[currentSlide - 1].classList.add("bubble-active");
 }
