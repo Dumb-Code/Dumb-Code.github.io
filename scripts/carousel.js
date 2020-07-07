@@ -8,11 +8,6 @@ element.appendChild(first);
 //Make the whole thing the correct width
 element.style.width = element.childElementCount * 100 + "%";
 
-const solid = document.createElement("div");
-solid.classList.add("bubble-solid");
-const empty = document.createElement("div");
-solid.classList.add("bubble-empty");
-
 var maxSlideIndex = element.childElementCount - 2;
 var time = 0;
 var currentSlide = 1;
@@ -25,8 +20,15 @@ var reverse = false;
 document.getElementById("left").onclick = pageBack;
 document.getElementById("right").onclick = pageForward;
 
+//Setup Indicators
+var bubbles = document.getElementsByClassName("carousel-indicators")[0];
+var bubbleElement = document.createElement("div");
+bubbleElement.classList.toggle("bubble");
+for (let bubble = 0; bubble < maxSlideIndex; bubble++) {
+  bubbles.appendChild(document.appendChild(bubbleElement.cloneNode(true)));
+}
+//For some reason it's offset by one so move it
 move();
-updateIndicators();
 
 function tick() {
   if (time >= slideStay + slideDuration) {
@@ -71,14 +73,9 @@ function pageBack() {
 }
 
 function updateIndicators() {
-  var bubbleElement = document.createElement("div");
-  bubbleElement.classList.toggle("carousel-indicators");
-  for (var i = 1; i < maxSlideIndex + 1; i++) {
-    if (i === currentSlide) {
-      bubbleElement.appendChild(solid.cloneNode(true));
-    } else {
-      bubbleElement.appendChild(empty.cloneNode(true));
-    }
+  var bubbleElement = document.getElementsByClassName("carousel-indicators")[0]
+  for (let i = 0; i < maxSlideIndex; i++) {
+    bubbleElement.children[i].classList.remove("bubble-active");
   }
-  document.getElementsByClassName("carousel-indicators")[0] = bubbleElement;
+  bubbleElement.children[currentSlide].classList.add("bubble-active");
 }

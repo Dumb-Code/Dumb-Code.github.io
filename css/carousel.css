@@ -22,15 +22,11 @@
     transition-duration: 0.5s;
 }
 
-.bubble-solid {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    display: inline-block;
+.bubble-active {
     background-color: #bbb;
 }
 
-.bubble-empty {
+.bubble {
     height: 11px;
     width: 11px;
     background: transparent;
