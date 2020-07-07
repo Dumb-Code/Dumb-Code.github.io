@@ -71,7 +71,6 @@ function pageBack() {
 }
 
 function updateIndicators() {
-  bubbleElement.innerHTML = "";
   var bubbleElement = document.createElement("div");
   bubbleElement.classList.toggle("carousel-indicators");
   for (var i = 1; i < maxSlideIndex + 1; i++) {
