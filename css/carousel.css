@@ -21,3 +21,22 @@
     outline:none;
     transition-duration: 0.5s;
 }
+
+.bubble-solid {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #bbb;
+}
+
+.bubble-empty {
+    height: 11px;
+    width: 11px;
+    background: transparent;
+    border-style: solid;
+    border-radius: 50%;
+    display: inline-block;
+    border-width: 2px;
+    border-color: #bbb;
+}

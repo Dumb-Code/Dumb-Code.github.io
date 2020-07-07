@@ -67,9 +67,11 @@ function pageBack() {
 
 function updateIndicators() {
   const bubbleElement = document.getElementsByClassName("carousel-indicators")[0];
-  var bubbles = "";
+  const solid = document.createElement("div");
+  solid.classList.add("bubble-solid");
+  const empty = document.createElement("div");
+  solid.classList.add("bubble-empty");
   for (var i = 1; i < maxSlideIndex + 1; i++) {
-    i === currentSlide ? bubbles = bubbles + "⬤" : bubbles = bubbles + "⭘";
+    i === currentSlide ? bubbleElement.appendChild(solid) : bubbleElement.appendChild(empty);
   }
-  bubbleElement.innerText = bubbles;
 }
