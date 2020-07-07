@@ -77,5 +77,5 @@ function updateIndicators() {
   for (let i = 0; i < maxSlideIndex - 1; i++) {
     bubbleElement.children[i].classList.remove("bubble-active");
   }
-  bubbleElement.children[currentSlide - 1].classList.add("bubble-active");
+  bubbleElement.childNodes[currentSlide - 1].classList.add("bubble-active");
 }
