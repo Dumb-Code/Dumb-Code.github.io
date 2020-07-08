@@ -23,10 +23,11 @@
 }
 
 .bubble-active {
-    background-color: #bbb;
+    background-color: #bbb !important;
 }
 
 .bubble {
+	margin: 0px 3px 0px;
     height: 11px;
     width: 11px;
     background: transparent;

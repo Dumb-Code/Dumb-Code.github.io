@@ -29,6 +29,7 @@ for (let bubble = 0; bubble < maxSlideIndex; bubble++) {
 }
 //For some reason it's offset by one so move it
 move();
+updateIndicators();
 
 function tick() {
   if (time >= slideStay + slideDuration) {
@@ -74,7 +75,7 @@ function pageBack() {
 
 function updateIndicators() {
   var bubbleElement = document.getElementsByClassName("carousel-indicators")[0]
-  for (let i = 0; i < maxSlideIndex - 1; i++) {
+  for (let i = 0; i < maxSlideIndex; i++) {
     bubbleElement.children[i].classList.remove("bubble-active");
   }
   bubbleElement.childNodes[currentSlide - 1].classList.add("bubble-active");
