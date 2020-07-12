@@ -1,2 +1,115 @@
+<!DOCTYPE html>
+<html style="overflow-x: hidden;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>DumbCode</title>
+  <link rel="stylesheet" href="./css/bulma.css" />
+  <link rel="stylesheet" href="./css/carousel.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+  <script src="scripts/modules.js"></script>
+</head>
+<body>
+    <section class="is-mobile">
+        <div module="modules/navbar.html"></div>
+    </section>
 
-studio
+    <section class="hero is-large is-dark has-background-black-ter">
+        <div class="hero-body">
+            <div class="container" style="text-align: center;">
+                <h1 class="title is-1" style="font-size: 3rem;">
+                    Dumb Code Studio
+                </h1>
+                <h1 class="subtitle is-5">
+                    A Studio of tools to make creating more complicated models in Minecraft.
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-dark has-background-black-ter py-0 px-0" style="overflow: hidden;">
+        
+        <div class="hero-body is-marginless is-paddingless">
+            <div class="carousel columns is-gapless is-mobile" id="carousel" style="height: 230px;">
+                <div class="column">
+                    <div style="background-image: url('./images/dumb_library.bmp'); height: 100%; background-size: cover; text-align: center; padding-top: 70px;">
+                        <h1 class="title is-1"><strong>The Better Modeler</strong></h1>
+                        <h4 class="subtitle is-4">Model anything with ease.</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="background-image: url('./images/dumb_library.bmp'); height: 100%; background-size: cover; text-align: center; padding-top: 70px;">
+                        <h1 class="title is-1"><strong>Feature Packed Animator</strong></h1>
+                        <h4 class="subtitle is-4">Bring your models to life with out feature rich and easy to use Animator.</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="background-image: url('./images/dumb_library.bmp'); height: 100%; background-size: cover; text-align: center; padding-top: 70px;">
+                        <h1 class="title is-1"><strong>Access anywhere</strong></h1>
+                        <h4 class="subtitle is-4">Our app is built to work on the web and soon on desktops.</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="columns is-mobile is-gapless" style="height: 0px;">
+                <div class="column">
+                    <button class="carousel-navigators has-text-light" style="left: 20px; position: relative; top: -150px;" id="left">
+                        <span class="icon is-small">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="column">
+                    <div class="carousel-indicators" style="margin-top: -50px;"></div>
+                </div>
+                <div class="column" style="text-align: right;">
+                    <button class="carousel-navigators has-text-light" style="right: 20px; position: relative; top: -150px;" id="right">
+                        <span class="icon is-small">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-small is-dark has-background-black-ter" background-themable="true">
+        <div class="hero-body">
+            <div class="container center">
+                <div class="title is-2 mb-0">Features</div>
+                <div class="title is-5">What does the DumbCode Studio offer to you or your team?</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-medium is-dark has-background-black-ter pb-6">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="notification is-dark" style="height: 300px; background-image: url('./images/studio/modeler.png');">
+                        <h1 class="title">Modeler</h1>
+                        <h2 class="subtitle">Built in modeling software with all minecraft model features exposed.</h2>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="notification is-dark" style="height: 300px; background-image: url('./images/studio/animator.jpg');">
+                        <h1 class="title">Animator</h1>
+                        <h2 class="subtitle">In-depth animator with a large set of features, simplified with a clean and easy UI.</h2>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="notification is-dark" style="height: 300px; background-image: url('./images/studio/project.jpg');">
+                        <h1 class="title">Project Management</h1>
+                        <h2 class="subtitle">Save and export your model and animations as a project.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="is-mobile">
+        <div module="./modules/footer.html"></div>
+    </section>
+    <script src="../scripts/carousel.js"></script>
+</body>
+</html>
