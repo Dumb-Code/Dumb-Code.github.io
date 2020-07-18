@@ -1,0 +1,15 @@
+.is-cursor {
+    width: 26px;
+    height: 5px;
+    background: white;
+    animation-name: cursor;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cursor {
+    0%  { background: white; }
+    15%  { background: transparent; }
+    50%  { background: transparent; }
+    65%  { background: white; }
+}
