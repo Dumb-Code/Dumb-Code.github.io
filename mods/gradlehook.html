@@ -1,1 +1,235 @@
-gradlehook
+<!DOCTYPE html>
+<html style="overflow-x: hidden;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>GradleHook</title>
+  <link rel="stylesheet" href="../css/bulma.css" />
+  <link rel="stylesheet" href="../css/carousel.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+  <script src="../scripts/modules.js"></script>
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/solarized-dark.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="has-background-black-ter">
+
+    <section class="is-mobile">
+        <div module="../modules/navbar.html"></div>
+    </section>
+
+    <br><br>
+
+    <div class="container is-dark has-background-black-ter">
+        <div class="columns">
+            <div class="column is-three-quarters">
+
+                <div class="notification is-dark has-background-black-ter has-text-grey">
+                    <h1 class="title is-2 has-text-white">GradleHook</h1>
+                    <br>
+                    <h3 class="subtitle is-4 mb-0 has-text-white-ter">About</h3>
+                    <p>Adds the <code class="tag is-dark">postRequest</code> task which simply posts a POST request along with the specified builds. Additional fields for the request can be specified. The request uses the user agent <code class="tag is-dark">Mozilla/5.0</code> and has the content-type of <code class="tag is-dark">multipart/form-data</code></p>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-2 has-text-white-ter">Applying the Plugin</h3>
+                    <p>Using the <a href="https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block">plugins DSL</a>:</p><br>
+                    <div class="notification is-dark px-0 py-0" style="overflow: hidden;">
+                        <pre class="px-5 py-0 my-0" style="background: transparent;">
+                            <code style="margin-top: -30px; margin-bottom: -40px;">
+plugins {
+    id "net.dumbcode.gradlehook" version "1.2.0"
+}
+                            </code>
+                        </pre>
+                    </div>
+
+                    <p>Using <a href="https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application">legacy plugin application</a>:</p><br>
+                    <div class="notification is-dark px-0 py-0" style="overflow: hidden;">
+                        <pre class="px-5 py-0 my-0" style="background: transparent;">
+                            <code class="javascript" style="margin-top: -30px; margin-bottom: -40px;">
+buildscript {
+    repositories {
+        maven {
+          url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+    dependencies {
+        classpath "net.dumbcode.gradlehook:GradleHook:1.2.0"
+    }
+}
+
+apply plugin: "net.dumbcode.gradlehook"
+                            </code>
+                        </pre>
+                    </div>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-2 has-text-white-ter">Simple Plugin</h3>
+                    <p>The bare minimum of a plugin using gradlehook</p><br>
+                    <div class="tags has-addons mb-2">
+                        <div class="tag is-warning">Note</div>
+                        <div class="tag is-dark">You will want to keep the urlToken private. It should really be in a gradle.properties file.</div>
+                    </div>
+                    <div class="notification is-dark px-0 py-0" style="overflow: hidden;">
+                        <pre class="px-5 py-0 my-0" style="background: transparent;">
+                            <code class="javascript" style="margin-top: -30px; margin-bottom: -40px;">
+gradlehook {
+    urlToken "http://example.com/webhook" //Keep private.
+    addArtifact jar
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-2 has-text-white-ter">Additional Tasks</h3>
+                    <p>You can apply multiple tasks to be sent over. In this senario 2 files would be sent</p><br>
+                    <div class="notification is-dark px-0 py-0" style="overflow: hidden;">
+                        <pre class="px-5 py-0 my-0" style="background: transparent;">
+                            <code class="javascript" style="margin-top: -30px; margin-bottom: -40px;">
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = "sources"
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+gradlehook {
+    urlToken "http://example.com/webhook"
+    addArtifact jar
+    addArtifact sourcesJar
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-2 has-text-white-ter">Fields</h3>
+                    <p>When sending the request, you might want to add additional data. This can be done with the addField method. For example, sending a webhook to a discord server would be:</p><br>
+                    <div class="tags has-addons mb-2">
+                        <div class="tag is-warning">Note</div>
+                        <div class="tag is-dark">You will want to keep the urlToken private. It should really be in a gradle.properties file or another file that isnt commit to git.</div>
+                    </div>
+                    <div class="notification is-dark px-0 py-0" style="overflow: hidden;">
+                        <pre class="px-5 py-0 my-0" style="background: transparent;">
+                            <code class="javascript" style="margin-top: -30px; margin-bottom: -40px;">
+gradlehook {
+    urlToken 'https://discordapp.com/api/webhooks/012345678912345678/foobar' //keep private
+    
+    addField 'payload_json', '{ "embeds": [{ "timestamp": "{{datetime}}" }] }'
+    
+    addArtifact jar
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-2 has-text-white-ter">Field Placeholders</h3>
+                    <p>The fields are able to have placeholders, as shown in the above example. These placeholders mean the following:</p>
+                    <div class="content">
+                        <ul>
+                            <li><code class="tag is-dark">{{version}}</code> -> project version</li>
+                            <li><code class="tag is-dark">{{name}}</code> -> project name</li>
+                            <li><code class="tag is-dark">{{group}}</code> -> project group</li>
+                            <li><code class="tag is-dark">{{datetime}}</code> -> the current time in UTC, in ISO-8601 format</li>
+                        </ul> 
+                    </div>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-2 has-text-white-ter">Message First Option</h3>
+                    <p>In some senarios, you want the text message to sent as a seperate webhook before the build webhooks. The following would mean a webhook with the field "id" would be sent, then once an HTTP_OK response code is sent, the artifacts are sent over in a webhook.</p><br>
+                    <div class="notification is-dark px-0 py-0" style="overflow: hidden;">
+                        <pre class="px-5 py-0 my-0" style="background: transparent;">
+                            <code style="margin-top: -30px; margin-bottom: -40px;">
+gradlehook {
+    urlToken "http://example.com/webhook"
+    addField 'id', 'user2201'
+    addArtifact jar
+    messageFirst
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <br><br>
+
+                    <h3 class="subtitle is-4 mb-0 has-text-white-ter">License</h3>
+                    <p>GradleHook is licensed under the MIT with no exceptions.</p>
+                </div>
+
+                <br><br>
+
+            </div>
+
+            <div class="column is-one-fourth">
+
+                <div class="notification is-dark has-background-black-ter my-0">
+                    <h1 class="title is-6 mt-0 mb-2 has-text-white-ter">About</h1>
+                    <div class="content is-small">
+
+                        <p>GradleHook is a gradle plugin that adds a POST request as a gradle task.</p>
+
+                        <div class="columns is-multiline is-mobile is-gapless">
+                            <div class="column is-full-desktop is-full-tablet">
+                                <div class="level my-0">
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <span class="icon"><i class="fas fa-code"></i></span>
+                                        </div>
+                                        <div class="level-item"><a href="https://github.com/Dumb-Code/GradleHook">View Source</a></div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="column is-full-desktop is-full-tablet">
+                                <div class="level my-0">
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <span class="icon"><i class="fas fa-book"></i></span>
+                                        </div>
+                                        <div class="level-item"><a href="https://github.com/Dumb-Code/GradleHook/wiki">View Wiki</a></div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="column is-full-desktop is-full-tablet">
+                                <div class="level my-0">
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <span class="icon"><i class="fas fa-balance-scale"></i></span>
+                                        </div>
+                                        <div class="level-item"><a href="https://github.com/Dumb-Code/GradleHook/blob/master/LICENSE.md">View License</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="notification is-dark has-background-black-ter my-0">
+                    <h1 class="title is-6 mt-0 mb-2 has-text-white-ter">Contributors</h1>
+                    <div class="content is-small px-0">
+
+                        <div class="columns is-mobile is-gapless my-0">
+                            <div class="column px-0 mx-0 is-narrow"><figure class="image is-32x32 mr-3 ml-0"><img class="is-rounded" src="../images/people/wyn-price.png"></figure></div>
+                            <div class="column px-0 mx-0"><div class="content is-paddingless"><p><a class="link" href="https://dev.dumbcode.net/team#wyn-price"><strong>Wyn Price</strong></a> <br>Developer</p></div></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <section class="is-mobile">
+        <div module="../modules/footer.html"></div>
+    </section>
+</body>
+</html>
