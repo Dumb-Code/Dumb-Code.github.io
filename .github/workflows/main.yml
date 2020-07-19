@@ -1,7 +1,7 @@
 name: Publish Website
 on:
   push:
-    branches: [ master ]
+    branches: [ new-site ]
 
 jobs:
   FTP-Deploy-Action:
@@ -11,10 +11,18 @@ jobs:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
+    - name: Create-CSS
+      run: touch ./css/bulma.css
+    - name: Compile-CSS
+      uses: gha-utilities/sass-build@v0.2.5
+      with:
+        source: ./css/bulma.scss
+        destination: ./css/bulma.css
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: sftp://51.222.31.214/var/www/dumbcode.net/public
+        ftp-server: sftp://51.222.31.214/var/www/dumbcode.net/dev
         ftp-username: ubuntu
         ftp-password: ${{ secrets.FTP_PASSWORD }}
         known-hosts: ${{ secrets.FTP_KNOWN_HOSTS }}
+        git-ftp-args: --all
