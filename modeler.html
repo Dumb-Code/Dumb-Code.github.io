@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dumbcode Studio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js" ></script>
     <script src="scripts/modules.js"></script>
     <script src="scripts/theme.js"></script>
@@ -16,7 +16,62 @@
       <div module="modules/common/navbar.html"></div>
     </section>
 
-    
+    <section class="section" style="padding: 0px; margin: 0px;">
+      <div class="columns is-gapless" style="height: 96vh">
+        <div class="column is-10 has-background-info is-paddingless" style="height: 100%; display: flex; flex-direction: column;">
+          <!--Command Log-->
+          <div class="section has-background-warning py-0 my-0 pt-2" style="height: 6vh; padding-left: 40px;">test<br>test2</div>
+          <!--Command Field-->
+          <div class="section has-background-danger py-0 my-0" style="height: 3vh;">&#x0003E; command</div>
+
+          <div class="section is-paddingless is-marginless" style="height: 3vh; flex-grow: 1;">
+            <div class="columns is-gapless">
+              <!--Common Commands Area-->
+              <div class="column is-marginless has-background-primary is-narrow" style="height: 83vh; display: flex; flex-direction: column;">
+                <span class="icon is-medium">
+                  <i class="fas fa-home"></i>
+                </span>
+                <span class="icon is-medium">
+                  <i class="fas fa-home"></i>
+                </span>
+                <span class="icon is-medium">
+                  <i class="fas fa-home"></i>
+                </span>
+                <span class="icon is-medium">
+                  <i class="fas fa-home"></i>
+                </span>
+                <span class="icon is-medium">
+                  <i class="fas fa-home"></i>
+                </span>
+              </div>
+              
+              <div class="column is-marginless" style="display: flex; flex-direction: column;">
+                <!--Model Viewport-->
+                <div class="section has-background-dark is-paddingless is-marginless has-text-light" style="flex-grow: 1;">
+                  model viewport
+                </div>
+                <!--Gumball Options-->
+                <div class="section has-background-success is-paddingless is-marginless" style="height: 4vh;">
+                  gumball options
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section has-background-danger py-0 my-0" style="height: 4vh;">Info and stuff</div>
+        </div>
+        <div class="column is-2 has-background-link is-paddingless" style="display: flex; flex-direction: column;">
+          <!--Layers Tree-->
+          <div class="section has-background-sucess" style="flex-grow: 1;">
+            layers
+          </div>
+          <!--Selected Cube Properties-->
+          <div class="section has-background-primary" style="height: 40vh;">
+            cube properties
+          </div>
+        </div>
+      </div>
+    </section>
 
   </body>
 </html>
