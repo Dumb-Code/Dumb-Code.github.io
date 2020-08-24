@@ -18,16 +18,16 @@
 
     <section class="section" style="padding: 0px; margin: 0px;">
       <div class="columns is-gapless" style="height: 96vh">
-        <div class="column is-10 has-background-info is-paddingless" style="height: 100%; display: flex; flex-direction: column;">
+        <div class="column has-background-info is-paddingless" style="height: 100%; display: flex; flex-direction: column;">
           <!--Command Log-->
-          <div class="section has-background-warning py-0 my-0 pt-2" style="height: 6vh; padding-left: 40px;">test<br>test2</div>
+          <div class="section has-background-black-ter py-0 my-0 pt-2" style="height: 6vh; border: 1px solid #121212; font-size: 14px; border-right: none;">test<br>test2</div>
           <!--Command Field-->
-          <div class="section has-background-danger py-0 my-0" style="height: 3vh;">&#x0003E; command</div>
+          <div class="section has-background-black-ter py-0 my-0 has-text-light" style="margin-left: -14px; height: 3vh; border: 1px solid #121212; font-size: 14px; border-top: 0px; border-right: none;">&#x0003E; command</div>
 
           <div class="section is-paddingless is-marginless" style="height: 3vh; flex-grow: 1;">
             <div class="columns is-gapless">
               <!--Common Commands Area-->
-              <div class="column is-marginless has-background-primary is-narrow" style="height: 83vh; display: flex; flex-direction: column;">
+              <div class="column is-marginless has-background-black-ter has-text-gray-light is-narrow" style="height: 83vh; display: flex; flex-direction: column; border-right: 1px solid #121212;">
                 <span class="icon is-medium">
                   <i class="fas fa-home"></i>
                 </span>
@@ -47,28 +47,259 @@
               
               <div class="column is-marginless" style="display: flex; flex-direction: column;">
                 <!--Model Viewport-->
-                <div class="section has-background-dark is-paddingless is-marginless has-text-light" style="flex-grow: 1;">
-                  model viewport
+                <div class="section has-background-dark is-paddingless is-marginless has-text-light has-text-centered" style="flex-grow: 1;">
+                  <br><br><br><br><br><br><br><br><br>
+                  
+
+                  Model Viewport
+
+
                 </div>
                 <!--Gumball Options-->
-                <div class="section has-background-success is-paddingless is-marginless" style="height: 4vh;">
-                  gumball options
+                <div class="section has-background-black-ter is-paddingless is-marginless" style="height: 3.5vh; border-top: 1px solid #121212;">
+                  <span class="icon is-medium">
+                    <i class="fas fa-home"></i>
+                  </span>
+                  <span class="icon is-medium">
+                    <i class="fas fa-home"></i>
+                  </span>
+                  <span class="icon is-medium">
+                    <i class="fas fa-home"></i>
+                  </span>
+                  <span class="icon is-medium">
+                    <i class="fas fa-home"></i>
+                  </span>
+                  <span class="icon is-medium">
+                    <i class="fas fa-home"></i>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="section has-background-danger py-0 my-0" style="height: 4vh;">Info and stuff</div>
+          <div class="section has-background-black-ter py-0 my-0 pl-1 has-text-light" style="height: 4vh; border: 1px solid #121212; font-size: 14px; border-right: none;">
+            <div class="columns is-gapless">
+              <div class="column is-narrow">
+                
+                <div class="dropdown is-hoverable is-up">
+                  <div class="dropdown-trigger">
+                    <button class="button is-dark" aria-haspopup="true" aria-controls="dropdown-menu7" style="height: 20px; font-size: 14px;">
+                      <span>Textured</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-up" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-content has-background-black-bis">
+                      <div class="dropdown-item has-text-weight-bold has-text-grey-light"><p>Display Mode</p></div>
+                      <hr class="dropdown-divider">
+                      <a href="#" class="dropdown-item has-text-info">Textured</a>
+                      <a href="#" class="dropdown-item">UV</a>
+                      <a href="#" class="dropdown-item">White</a>
+                      <a href="#" class="dropdown-item">Outline?</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="dropdown is-hoverable is-up">
+                  <div class="dropdown-trigger">
+                    <button class="button is-dark ml-1" aria-haspopup="true" aria-controls="dropdown-menu7" style="height: 20px; font-size: 14px;">
+                      <span>Perspective</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-up" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-content has-background-black-bis">
+                      <div class="dropdown-item has-text-weight-bold has-text-grey-light"><p>Render Mode</p></div>
+                      <hr class="dropdown-divider">
+                      <a href="#" class="dropdown-item has-text-info">Perspective</a>
+                      <a href="#" class="dropdown-item">Isometric</a>
+                      <a href="#" class="dropdown-item">Two Point Perspective</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <button class="button is-dark ml-1" aria-haspopup="true" aria-controls="dropdown-menu7" style="height: 20px; font-size: 14px;">
+                  <span><i class="far fa-lightbulb"></i></span>
+                </button>
+              </div>
+              <div class="column is-narrow">
+                <div class="button is-paddingless is-dark px-3 ml-1" style="height: 20px; font-size: 14px;">Body_Base_1</div>
+              </div>
+              <div class="column is-narrow">
+                <div class="button is-paddingless is-dark px-3 mx-1" style="height: 20px; font-size: 14px;">15 Child Objects</div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="column is-2 has-background-link is-paddingless" style="display: flex; flex-direction: column;">
+        <div class="column is-narrow has-background-link is-paddingless" style="display: flex; flex-direction: column;">
           <!--Layers Tree-->
-          <div class="section has-background-sucess" style="flex-grow: 1;">
+          <div class="section has-background-black-ter" style="flex-grow: 1; border: 1px solid #121212;">
             layers
           </div>
           <!--Selected Cube Properties-->
-          <div class="section has-background-primary" style="height: 40vh;">
-            cube properties
+          <div class="section has-background-black-ter is-marginless is-paddingless pt-1" style="height: 40vh; border: 1px solid #121212; border-top: none;">
+
+            <div class="has-background-black-ter is-marginless is-paddingless columns is-gapless">
+              <div class="column notification has-background-danger-dark has-text-light has-text-centered mx-1">X</div>
+              <div class="column notification has-background-info-dark has-text-light has-text-centered">Y</div>
+              <div class="column notification has-background-success-dark has-text-light has-text-centered mx-1">Z</div>
+            </div>
+
+            <p class="heading is-size-8 px-1">Dimensions</p>
+            <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <p class="heading is-size-8 px-1">Position</p>
+            <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <p class="heading is-size-8 px-1">Offset</p>
+            <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="heading is-size-8 px-1 my-0">Cube Grow</p>
+            <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 5.3rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 5.3rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="field has-addons is-marginless">
+                  <div class="control is-small">
+                    <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 5.3rem; border-left: none;">
+                  </div>
+                </div>
+              </div>
+              <div class="column has-background-black-ter pl-5">
+                <span class="icon is-small">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <p class="heading is-size-8 px-0 my-0">Rotation</p>
+            <div class="notification has-background-dark is-marginless no-border is-paddingless">
+              <div class="field has-addons is-marginless">
+                <div class="control">
+                  <a class="button is-small">X</a>
+                </div>
+                <div class="control is-small" style="width: 100%;">
+                  <input class="input is-small slider has-background-black-ter is-dark has-text-light" type="range" min="-180" max="180" value="0">
+                </div>
+                <div class="control is-small">
+                  <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem;">
+                </div>
+              </div>
+              <div class="field has-addons is-marginless">
+                <div class="control">
+                  <a class="button is-small is-static">Y</a>
+                </div>
+                <div class="control is-small" style="width: 100%;">
+                  <input class="input is-small slider has-background-black-ter is-dark has-text-light" type="range" min="-180" max="180" value="0">
+                </div>
+                <div class="control is-small">
+                  <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem;">
+                </div>
+              </div>
+              <div class="field has-addons is-marginless">
+                <div class="control">
+                  <a class="button is-small is-static">Z</a>
+                </div>
+                <div class="control is-small" style="width: 100%;">
+                  <input class="input is-small slider has-background-black-ter is-dark has-text-light" type="range" min="-180" max="180" value="0">
+                </div>
+                <div class="control is-small">
+                  <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem;">
+                </div>
+              </div>
+            </div>
+
+
           </div>
+
+
+
+          
         </div>
       </div>
     </section>
