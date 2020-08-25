@@ -40,7 +40,7 @@
       
       .caret-down::before {
         -ms-transform: rotate(90deg); /* IE 9 */
-        -webkit-transform: rotate(90deg); /* Safari */'
+        -webkit-transform: rotate(90deg); /* Safari */
         transform: rotate(90deg);  
       }
       
@@ -102,23 +102,46 @@
 
                 </div>
                 <!--Gumball Options-->
-                <div class="section has-background-black-ter is-paddingless is-marginless" style="height: 3.5vh; border-top: 1px solid #121212;">
-                  <span class="icon is-medium">
-                    <i class="fas fa-home"></i>
-                  </span>
-                  <span class="icon is-medium">
-                    <i class="fas fa-home"></i>
-                  </span>
-                  <span class="icon is-medium">
-                    <i class="fas fa-home"></i>
-                  </span>
-                  <span class="icon is-medium">
-                    <i class="fas fa-home"></i>
-                  </span>
-                  <span class="icon is-medium">
-                    <i class="fas fa-home"></i>
-                  </span>
+                <div class="section has-background-black-ter is-paddingless is-marginless is-gapless" style="height: 3.5vh; border-top: 1px solid #121212;" id="gb-object">
+
+                  <div class="buttons has-addons mt-1 is-narrow ml-4" style="float: left;">
+                    <button class="button is-success" style="height: 24px; font-size: 14px;">Object</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;" onClick="gumball()">Gumball</button>
+                  </div>
+
+                  <div class="buttons has-addons mt-1 is-narrow ml-4" style="float: left;">
+                    <button class="button is-info" style="height: 24px; font-size: 14px;" onClick="setMove()" id="move-button">Move</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;" onClick="setRotate()" id="rotate-button">Rotate</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;" onClick="setDimension()" id="dimension-button">Dimension</button>
+                  </div>
+
+                  <div class="buttons has-addons mt-1 is-narrow ml-4" style="float: left;" id="move-tools">
+                    <button class="button is-info" style="height: 24px; font-size: 14px;">Position</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;">Offset</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;">Rotation Point</button>
+                  </div>
+
+                  <div class="buttons has-addons mt-1 is-narrow ml-4" style="float: left; display: none;" id="rotate-tools">
+                    <button class="button is-info" style="height: 24px; font-size: 14px;">World</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;">Oject</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;">Independent</button>
+                  </div>
+
                 </div>
+                <div class="section has-background-black-ter is-paddingless is-marginless is-gapless" style="height: 3.5vh; border-top: 1px solid #121212; display: none;" id="gb-gumball">
+
+                  <div class="buttons has-addons mt-1 is-narrow ml-4" style="float: left;">
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;" onClick="object()">Object</button>
+                    <button class="button is-success" style="height: 24px; font-size: 14px;">Gumball</button>
+                  </div>
+
+                  <div class="buttons has-addons mt-1 is-narrow ml-4" style="float: left;">
+                    <button class="button is-info" style="height: 24px; font-size: 14px;">Position</button>
+                    <button class="button is-dark" style="height: 24px; font-size: 14px;">Rotation</button>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
@@ -389,6 +412,84 @@
         this.classList.toggle("caret-down");
       });
     }
+
+    function gumball() {
+      document.getElementById("gb-object").style.display = "none";
+      document.getElementById("gb-gumball").style.display = "block";
+    }
+
+    function object() {
+      document.getElementById("gb-object").style.display = "block";
+      document.getElementById("gb-gumball").style.display = "none";
+    }
+
+    function setMove() {
+      document.getElementById("rotate-tools").style.display = "none";
+      document.getElementById("move-tools").style.display = "block";
+
+      let moveButton = document.getElementById("move-button");
+      let rotateButton = document.getElementById("rotate-button");
+      let dimensionButton = document.getElementById("dimension-button");
+
+      if (dimensionButton.classList.contains("is-info")) {
+        dimensionButton.classList.toggle("is-info");
+        dimensionButton.classList.toggle("is-dark");
+      }
+      if (rotateButton.classList.contains("is-info")) {
+        rotateButton.classList.toggle("is-info");
+        rotateButton.classList.toggle("is-dark");
+      }
+      if (moveButton.classList.contains("is-dark")) {
+        moveButton.classList.toggle("is-info");
+        moveButton.classList.toggle("is-dark");
+      }
+    }
+
+    function setRotate() {
+      document.getElementById("rotate-tools").style.display = "block";
+      document.getElementById("move-tools").style.display = "none";
+
+      let moveButton = document.getElementById("move-button");
+      let rotateButton = document.getElementById("rotate-button");
+      let dimensionButton = document.getElementById("dimension-button");
+
+      if (moveButton.classList.contains("is-info")) {
+        moveButton.classList.toggle("is-info");
+        moveButton.classList.toggle("is-dark");
+      }
+      if (dimensionButton.classList.contains("is-info")) {
+        dimensionButton.classList.toggle("is-info");
+        dimensionButton.classList.toggle("is-dark");
+      }
+      if (rotateButton.classList.contains("is-dark")) {
+        rotateButton.classList.toggle("is-info");
+        rotateButton.classList.toggle("is-dark");
+      }
+    }
+
+    function setDimension() {
+      document.getElementById("rotate-tools").style.display = "none";
+      document.getElementById("move-tools").style.display = "none";
+
+      let moveButton = document.getElementById("move-button");
+      let rotateButton = document.getElementById("rotate-button");
+      let dimensionButton = document.getElementById("dimension-button");
+
+      if (moveButton.classList.contains("is-info")) {
+        moveButton.classList.toggle("is-info");
+        moveButton.classList.toggle("is-dark");
+      }
+      if (rotateButton.classList.contains("is-info")) {
+        rotateButton.classList.toggle("is-info");
+        rotateButton.classList.toggle("is-dark");
+      }
+      if (dimensionButton.classList.contains("is-dark")) {
+        dimensionButton.classList.toggle("is-info");
+        dimensionButton.classList.toggle("is-dark");
+      }
+    }
+
+
     </script>
 
 </html>
