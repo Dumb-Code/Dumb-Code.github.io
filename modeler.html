@@ -102,7 +102,7 @@
   	-moz-transition: all 0.1s ease-out;
   	-ms-transition: all 0.1s ease-out;
   	-o-transition: all 0.1s ease-out;
-    border: 2px solid #209cee;
+    border: 2px solid #363636;
 }
 
 
@@ -113,7 +113,7 @@
     -ms-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
     opacity:1;
-    border: 2px solid #209cee;
+    border: 1px solid #209cee;
 }
 
 
@@ -327,25 +327,25 @@
         </div>
         <div class="column is-narrow has-background-link is-paddingless" style="display: flex; flex-direction: column;">
           <!--Layers Tree-->
-          <div class="section has-background-black-ter pt-5" style="flex-grow: 1; border: 1px solid #121212;">
+          <div class="section has-background-black-ter is-paddingless pt-3 pl-1" style="flex-grow: 1; border: 1px solid #121212;">
             
-            <p class="heading is-size-8 px-1">Layers</p>
+            <p class="heading is-size-8 px-1 has-text-grey-light">Layers</p>
 
             <ul id="layers-pannel" class="has-text-grey-lighter">
               <li><span class="caret"><i class="fas fa-cubes"></i> Body_Base</span>
                 <ul class="nested">
-                  <li><i class="fas fa-cube has-text-light"></i> Spine_1</li>
-                  <li><i class="fas fa-cube has-text-light"></i> Spine_2</li>
+                  <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Spine_1</li>
+                  <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Spine_2</li>
                   <li><span class="caret"><i class="fas fa-cubes"></i> Neck_Base</span>
                     <ul class="nested">
-                      <li><i class="fas fa-cube has-text-light"></i> Head</li>
-                      <li><i class="fas fa-cube has-text-light"></i> Mouth</li>
+                      <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Head</li>
+                      <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Mouth</li>
                       <li><span class="caret"><i class="fas fa-cubes"></i> Horn_Base</span>
                         <ul class="nested">
-                          <li><i class="fas fa-cube has-text-light"></i> Horn_1</li>
-                          <li><i class="fas fa-cube has-text-light"></i> Horn_2</li>
-                          <li><i class="fas fa-cube has-text-light"></i> Horn_3</li>
-                          <li><i class="fas fa-cube has-text-light"></i> Horn_4</li>
+                          <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Horn_1</li>
+                          <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Horn_2</li>
+                          <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Horn_3</li>
+                          <li><i class="fas fa-cube has-text-light" style="width: 10px;"></i> Horn_4</li>
                         </ul>
                       </li>
                     </ul>
@@ -358,7 +358,7 @@
 
           </div>
           <!--Selected Cube Properties-->
-          <div class="section has-background-black-ter is-marginless is-paddingless pt-1" style="height: 40vh; border: 1px solid #121212; border-top: none;">
+          <div class="section has-background-black-ter is-marginless is-paddingless pt-1" style="height: 42vh; border: 1px solid #121212; border-top: none;">
 
             <div class="has-background-black-ter is-marginless is-paddingless columns is-gapless">
               <div class="column notification has-background-danger has-text-light has-text-centered mx-1">X</div>
@@ -366,7 +366,7 @@
               <div class="column notification has-background-info has-text-light has-text-centered mx-1">Z</div>
             </div>
 
-            <p class="heading is-size-8 px-1 mt-2">Dimensions</p>
+            <p class="heading is-size-8 px-1 mt-2 has-text-grey-light">Dimensions</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -391,7 +391,7 @@
               </div>
             </div>
             
-            <p class="heading is-size-8 px-1 mt-1">Position</p>
+            <p class="heading is-size-8 px-1 mt-1 has-text-grey-light">Position</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -416,7 +416,7 @@
               </div>
             </div>
             
-            <p class="heading is-size-8 px-1 mt-1">Offset</p>
+            <p class="heading is-size-8 px-1 mt-1 has-text-grey-light">Offset</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -441,7 +441,7 @@
               </div>
             </div>
 
-            <p class="heading is-size-8 px-1 my-0 mt-1">Cube Grow</p>
+            <p class="heading is-size-8 px-1 my-0 mt-1 has-text-grey-light">Cube Grow</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -464,18 +464,18 @@
                   </div>
                 </div>
               </div>
-              <div class="column has-background-black-ter pl-5">
-                <span class="icon is-small">
+              <div class="column has-background-black-ter pl-5 has-text-grey-light">
+                <span class="icon is-small ml-3 mt-2">
                   <i class="fas fa-lock"></i>
                 </span>
               </div>
             </div>
 
-            <p class="heading is-size-8 px-0 mt-1">Rotation</p>
-            <div class="notification has-background-dark is-marginless no-border is-paddingless">
-              <div class="field has-addons is-marginless">
+            <p class="heading is-size-8 px-0 mt-1 ml-1 has-text-grey-light">Rotation</p>
+            <div class="notification has-background-black-ter is-marginless no-border is-paddingless">
+              <div class="field has-addons is-marginless mb-1 ml-1">
                 <div class="control">
-                  <a class="button is-small">X</a>
+                  <a class="button is-small is-static has-background-danger has-text-light" style="border: none;">X</a>
                 </div>
                 <div class="control is-small" style="width: 100%;">
                   <input class="input is-small slider has-background-black-ter is-dark has-text-light" type="range" min="-180" max="180" value="0">
@@ -484,9 +484,9 @@
                   <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem;">
                 </div>
               </div>
-              <div class="field has-addons is-marginless">
+              <div class="field has-addons is-marginless mb-1 ml-1">
                 <div class="control">
-                  <a class="button is-small is-static">Y</a>
+                  <a class="button is-small is-static has-background-success has-text-light" style="border: none;">Y</a>
                 </div>
                 <div class="control is-small" style="width: 100%;">
                   <input class="input is-small slider has-background-black-ter is-dark has-text-light" type="range" min="-180" max="180" value="0">
@@ -495,9 +495,9 @@
                   <input class="input is-small has-background-black-ter is-dark has-text-light" type="number" value="0" style="width: 6rem;">
                 </div>
               </div>
-              <div class="field has-addons is-marginless">
+              <div class="field has-addons is-marginless mb-1 ml-1">
                 <div class="control">
-                  <a class="button is-small is-static">Z</a>
+                  <a class="button is-small is-static has-background-info has-text-light" style="border: none;">Z</a>
                 </div>
                 <div class="control is-small" style="width: 100%;">
                   <input class="input is-small slider has-background-black-ter is-dark has-text-light" type="range" min="-180" max="180" value="0">
