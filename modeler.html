@@ -12,6 +12,52 @@
   </head>
   <body style="overflow: hidden;">
 
+
+    <style>
+      ul, #layer-pannel {
+        list-style-type: none;
+      }
+      
+      #layer-pannel {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .caret {
+        cursor: pointer;
+        -webkit-user-select: none; /* Safari 3.1+ */
+        -moz-user-select: none; /* Firefox 2+ */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+      }
+      
+      .caret::before {
+        content: "\25B6";
+        color: gray;
+        display: inline-block;
+        margin-right: 6px;
+      }
+      
+      .caret-down::before {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari */'
+        transform: rotate(90deg);  
+      }
+      
+      .nested {
+        display: none;
+      }
+      
+      .active {
+        display: block;
+      }
+
+      .nested li {
+        margin-left: 10px;
+      }
+      </style>
+
+
     <section class="is-mobile">
       <div module="modules/common/navbar.html"></div>
     </section>
@@ -140,19 +186,46 @@
         </div>
         <div class="column is-narrow has-background-link is-paddingless" style="display: flex; flex-direction: column;">
           <!--Layers Tree-->
-          <div class="section has-background-black-ter" style="flex-grow: 1; border: 1px solid #121212;">
-            layers
+          <div class="section has-background-black-ter pt-5" style="flex-grow: 1; border: 1px solid #121212;">
+            
+            <p class="heading is-size-8 px-1">Layers</p>
+
+            <ul id="layers-pannel" class="has-text-grey-lighter">
+              <li><span class="caret"><i class="fas fa-cubes"></i> Body_Base</span>
+                <ul class="nested">
+                  <li><i class="fas fa-cube has-text-light"></i> Spine_1</li>
+                  <li><i class="fas fa-cube has-text-light"></i> Spine_2</li>
+                  <li><span class="caret"><i class="fas fa-cubes"></i> Neck_Base</span>
+                    <ul class="nested">
+                      <li><i class="fas fa-cube has-text-light"></i> Head</li>
+                      <li><i class="fas fa-cube has-text-light"></i> Mouth</li>
+                      <li><span class="caret"><i class="fas fa-cubes"></i> Horn_Base</span>
+                        <ul class="nested">
+                          <li><i class="fas fa-cube has-text-light"></i> Horn_1</li>
+                          <li><i class="fas fa-cube has-text-light"></i> Horn_2</li>
+                          <li><i class="fas fa-cube has-text-light"></i> Horn_3</li>
+                          <li><i class="fas fa-cube has-text-light"></i> Horn_4</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>  
+                </ul>
+              </li>
+            </ul>
+
+
+
           </div>
           <!--Selected Cube Properties-->
           <div class="section has-background-black-ter is-marginless is-paddingless pt-1" style="height: 40vh; border: 1px solid #121212; border-top: none;">
 
             <div class="has-background-black-ter is-marginless is-paddingless columns is-gapless">
-              <div class="column notification has-background-danger-dark has-text-light has-text-centered mx-1">X</div>
-              <div class="column notification has-background-info-dark has-text-light has-text-centered">Y</div>
-              <div class="column notification has-background-success-dark has-text-light has-text-centered mx-1">Z</div>
+              <div class="column notification has-background-danger has-text-light has-text-centered mx-1">X</div>
+              <div class="column notification has-background-success has-text-light has-text-centered">Y</div>
+              <div class="column notification has-background-info has-text-light has-text-centered mx-1">Z</div>
             </div>
 
-            <p class="heading is-size-8 px-1">Dimensions</p>
+            <p class="heading is-size-8 px-1 mt-2">Dimensions</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -177,7 +250,7 @@
               </div>
             </div>
             
-            <p class="heading is-size-8 px-1">Position</p>
+            <p class="heading is-size-8 px-1 mt-1">Position</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -202,7 +275,7 @@
               </div>
             </div>
             
-            <p class="heading is-size-8 px-1">Offset</p>
+            <p class="heading is-size-8 px-1 mt-1">Offset</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -227,7 +300,7 @@
               </div>
             </div>
 
-            <p class="heading is-size-8 px-1 my-0">Cube Grow</p>
+            <p class="heading is-size-8 px-1 my-0 mt-1">Cube Grow</p>
             <div class="has-background-dark is-marginless is-paddingless columns is-gapless">
               <div class="column is-narrow">
                 <div class="field has-addons is-marginless">
@@ -257,7 +330,7 @@
               </div>
             </div>
 
-            <p class="heading is-size-8 px-0 my-0">Rotation</p>
+            <p class="heading is-size-8 px-0 mt-1">Rotation</p>
             <div class="notification has-background-dark is-marginless no-border is-paddingless">
               <div class="field has-addons is-marginless">
                 <div class="control">
@@ -305,4 +378,17 @@
     </section>
 
   </body>
+
+  <script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+    
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+    }
+    </script>
+
 </html>
